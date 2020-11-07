@@ -112,7 +112,7 @@
             } else if (lights == "" || lights == " ") {
                 document.getElementById("alert").style.display = "block";
             } else {
-                document.getElementById("valueText").innerHTML = broker + "," + topic + "," + controls.replace(',', '~') + "," + lights.replace(',', '~');
+                document.getElementById("valueText").innerHTML = broker + "~" + topic + "~" + controls + "~" + lights;
                 crearQR();
                 document.getElementById("alert").style.display = "none";
             }
