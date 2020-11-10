@@ -107,11 +107,11 @@
                 document.getElementById("alert").style.display = "block";
             } else if (topic == "" || topic == " ") {
                 document.getElementById("alert").style.display = "block";
-            } else if (controls == "" || controls == " ") {
+            }/* else if (controls == "" || controls == " ") {
                 document.getElementById("alert").style.display = "block";
             } else if (lights == "" || lights == " ") {
                 document.getElementById("alert").style.display = "block";
-            } else {
+            } */else {
                 document.getElementById("valueText").innerHTML = broker + "~" + topic + "~" + controls + "~" + lights;
                 crearQR();
                 document.getElementById("alert").style.display = "none";
