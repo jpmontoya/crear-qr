@@ -15,6 +15,19 @@
 </head>
 
 <body onload="crearQR()">
+
+    <nav class="navbar" style="position: absolute; width: 100vw; background-color: rgba(255, 255, 255, 0.8);">
+        <a class="navbar-brand" href="/">
+            <img src="qr-code.png" width="30" height="30" alt="" loading="lazy">
+        </a>
+        <div class="row justify-content-start" style="width: 95%;">
+            <a class="navbar active" href="/">Crear QR</a>
+            <a class="navbar" href="/documentacion">Documentación</a>
+            <a class="navbar nava" href="app.apk" download>Descargar App</a>
+            <a class="navbar nava" target="_blank" href="https://paypal.me/jpmontoyag">Donar</a>
+        </div>
+    </nav>
+
     <script type="text/javascript" src="qrcode.js"></script>
     <div id="back-color" class="d-flex flex-column justify-content-center align-items-center"
         style="background-color: #673AB7; height: 100vh;">
@@ -24,48 +37,47 @@
 
         <div id="alert" style="display: none;" class="alert alert-danger" role="alert">Completa todos los campos</div>
 
-        <div class="d-flex flex-row justify-content-between align-items-center"
-            style="width: 60%;">
+        <div class="d-flex flex-row justify-content-between align-items-center" style="width: 60%;">
             <div style="background-color: white; height: 25vw; width: 25vw; padding: 2%;">
                 <div id="qrcode" style="height: 100%; width: 100%;"></div>
             </div>
-        <div class="card" style="width: 40%;">
-            <div class="card-body">
-                <div class="d-flex flex-row">
+            <div class="card" style="width: 40%;">
+                <div class="card-body">
+                    <div class="d-flex flex-row">
+                        <div class="form-group">
+                            <label for="borkerInput">Broker</label>
+                            <input type="text" class="form-control" id="borkerInput" aria-describedby="emailHelp">
+                            <small id="brokerHelp" class="form-text text-muted">ej: test.mosquitto.org</small>
+                        </div>
+                        <div class="form-group ml-3">
+                            <label for="topicInput">Topic</label>
+                            <input type="text" class="form-control" id="topicInput" aria-describedby="emailHelp">
+                            <small id="topicHelp" class="form-text text-muted">ej: instalacion123</small>
+                        </div>
+                        <div class="form-group ml-3">
+                            <label>Color</label>
+                            <div class="color-picker"></div>
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <label for="borkerInput">Broker</label>
-                        <input type="text" class="form-control" id="borkerInput" aria-describedby="emailHelp">
-                        <small id="brokerHelp" class="form-text text-muted">ej: test.mosquitto.org</small>
+                        <label for="controlsInput">Controles (opcional)</label>
+                        <input id="controlsInput" class="form-control" type="text" data-role="tagsinput" value="Tv">
+                        <small id="lightsHelp" class="form-text text-muted">ejemplo: Tv Sala, Equipo Sonido, Tv
+                            Juan</small>
                     </div>
-                    <div class="form-group ml-3">
-                        <label for="topicInput">Topic</label>
-                        <input type="text" class="form-control" id="topicInput" aria-describedby="emailHelp">
-                        <small id="topicHelp" class="form-text text-muted">ej: instalacion123</small>
+                    <div class="form-group">
+                        <label for="lightsInput">Luces (opcional)</label>
+                        <input id="lightsInput" class="form-control" type="text" data-role="tagsinput"
+                            value="Dormitorio, Comedor">
+                        <small id="lightsHelp" class="form-text text-muted">ejemplo: Sala, Comedor, Patio
+                            posterior</small>
                     </div>
-                    <div class="form-group ml-3">
-                        <label>Color</label>
-                        <div class="color-picker"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="controlsInput">Controles (opcional)</label>
-                    <input id="controlsInput" class="form-control" type="text" data-role="tagsinput" value="Tv">
-                    <small id="lightsHelp" class="form-text text-muted">ejemplo: Tv Sala, Equipo Sonido, Tv
-                        Juan</small>
-                </div>
-                <div class="form-group">
-                    <label for="lightsInput">Luces (opcional)</label>
-                    <input id="lightsInput" class="form-control" type="text" data-role="tagsinput"
-                        value="Dormitorio, Comedor">
-                    <small id="lightsHelp" class="form-text text-muted">ejemplo: Sala, Comedor, Patio
-                        posterior</small>
-                </div>
 
-                <button onclick="validate()" href="#" class="btn btn-success">Crear código</button>
-                <button onclick="save()" href="#" class="btn btn-primary">Guardar código</button>
+                    <button onclick="validate()" href="#" class="btn btn-success">Crear código</button>
+                    <button onclick="save()" href="#" class="btn btn-primary">Guardar código</button>
+                </div>
             </div>
         </div>
-    </div>
 
     </div>
     <script>

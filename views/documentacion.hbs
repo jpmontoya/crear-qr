@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="shortcut icon" href="qr-code.png" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <title>Documentación</title>
+
+</head>
+
+<body>
+
+  <nav class="navbar" style="position: absolute; width: 100%; background-color: #673AB7;">
+    <a class="navbar-brand" href="/">
+      <img src="qr-code_blanco.png" width="30" height="30" alt="" loading="lazy">
+    </a>
+    <div class="row justify-content-start" style="width: 95%;">
+      <a class="navbar nava" href="/">Crear QR</a>
+      <a class="navbar nava active" href="/documentacion">Documentación</a>
+      <a class="navbar nava" href="app.apk" download>Descargar App</a>
+      <a class="navbar nava" target="_blank" href="https://paypal.me/jpmontoyag">Donar</a>
+    </div>
+  </nav>
+
+  <div class="d-flex flex-column"
+    style="background-color: #e7e7e7; min-height: 100vh; padding-top: 10%; padding-left: 20%; padding-right: 20%;">
+    <div class="col mb-4">
+      <h4>Introducción</h4>
+      <p>Este es un proyecto independiente, con el propósito de facilitar el desarrollo de dispositivos IOT, mediante
+        una aplicación móvil para Android y la creación de códigos QR para su configuración.</p>
+      <div class="d-flex flex-row">
+        <h5>¡No olvides apoyar mi trabajo con una pequeña donación!</h5>
+        <a href="https://paypal.me/jpmontoyag" target="_blank" class="mr-3"><img src="paypal.png" height="50"
+            alt=""></a>
+        <a href="paypal.me/jpmontoyag"><img src="nequi.png" height="50" alt=""></a>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <h4>Broker</h4>
+      <p>Es el servidor de mensajería, cumple la función de intermediario para los clientes conectados, enviando y
+        recibiendo mensajes mediante suscripciones y publicaciones.</p>
+      <p>Algunos de los más usados son <b>Mosquitto:</b> test.mosquitto.org, <b>HiveMQ:</b> broker.hivemq.com</p>
+      <img src="broker.gif" alt="" style="width: 10vw;">
+    </div>
+    <div class="col mb-4">
+      <h4>Topic</h4>
+      <p>Es el identificador de cada grupo en el broker, los clientes o dispositivos que interaccionan entre si, deben
+        estar conectados
+        al mismo topic. Dos personas usando el mismo topic podrían llegar a controlarse los dispositivos uno a otro.</p>
+      <p>Para evitar congeniar entre topics es recomendable usar nombres compuestos: <b>NombreNumeroEmpresa</b>
+        Juan123Esme</p>
+      <img src="topic.gif" alt="" style="width: 10vw;">
+    </div>
+    <div class="col mb-4">
+      <h4>Control remoto</h4>
+      <p>Para controlar dispositivos que funcionen a control remoto (infrarrojos) como Televisores, Proyectores y Aires
+        acondicionados, la aplicación
+        móvil cuenta con 3 menús para cada uno. Ingresa el nombre
+        de cada dispositivo y preciona Enter para completar.</p>
+      <h6>Si no deseas usar el menú de controles deja todo el campo en blanco.</h6><br>
+      <p>Para usar el menú del televisor, añade dispositivos que sus nombres comiencen con <b>Tv</b>.</p>
+      <p>Para usar el menú del proyector, añade dispositivos que sus nombres comiencen con <b>Proyector</b>.</p>
+      <p>Para usar el menú del aire acondicionado, añade dispositivos que sus nombres comiencen con <b>Aire</b>.</p>
+      <img src="controles.gif" alt="" style="width: 20vw;">
+      <div class="d-flex flex-row mt-4">
+        <div class="col">
+          <b>Televisor</b>
+          <img src="controles_menu.png" alt="" style="width: 20vw;">
+        </div>
+        <div class="col">
+          <b>Proyector</b>
+          <img src="proyector_menu.png" alt="" style="width: 20vw;">
+        </div>
+        <div class="col">
+          <b>Aire acondicionado</b>
+          <img src="aire_menu.png" alt="" style="width: 20vw;">
+        </div>
+      </div>
+      <br>
+      <h5 class="mt-4 mb-2">Lista de códigos para cada botón</h5>
+      <div class="d-flex flex-row justify-content-center">
+        <div class="d-flex flex-column mr-5">
+          <img src="controles.png" alt="" style="width: 20vw;">
+        </div>
+        <div class="d-flex flex-column" style="width:30%;">
+          <h6><br>● power <br>● up <br>● down <br>● left <br>● right <br>● ok <br>● left_up <br>● left_down <br>●
+            right_up <br>●
+            right_down
+            <br>● 1 <br>● 2 <br>● 3 <br>● 4 <br>● 5 <br>● 6 <br>● 7 <br>● 8 <br>● 9 <br>● 0</h6>
+        </div>
+        <div class="d-flex flex-column" style="width:40%;">
+          <br>
+          <p>Cada código enviado al broker dependerá del dispositivo seleccionado.</p>
+          <p>Si mi dispositivo seleccionado en la
+            aplicación móvil es <b>Tv Sala</b>, al presionar el botón de <b>Power</b> el código enviando al broker será
+            <b>powerTvSala</b>. Ten en cuenta que los espacios en el nombre son eliminados y que el código principal
+            pertenece a la lista antes mencionada.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col mb-4">
+      <h4>Luces</h4>
+      <p>Para controlar dispositivos on/off como lamparas, la aplicación
+        móvil cuenta con un menú especial. Ingresa el nombre
+        de cada dispositivo y preciona Enter para completar.</p>
+      <h6>Si no deseas usar el menú de luces deja todo el campo en blanco.</h6><br>
+      <img src="luces.gif" alt="" style="width: 20vw;">
+      <br>
+      <p>Los nombres también los podrás editar dentro de la aplicación móvil, manteniendo pulsado el botón de cada una
+        de las luces. Allí encontrarás también el código que será enviando al broker <b>device1, device2...</b> y se le
+        añadirá el estado de la luz <b>device1false, device2true...</b></p>
+      <img src="luces_config.gif" alt="" style="width: 20vw;">
+    </div>
+    <div class="col mb-5">
+      <h4>Crear QR y Escanearlo</h4>
+      <p>Una vez completes los campos clickea el botón <b>Crear código</b>.</p>
+      <p>Para descargar el código QR clickea en <b>Guardar código</b>.</p>
+      <h6>Puedes cambiar el color del código qr en la pestaña de <b>Color</b>. El color también se descargará junto con
+        el código generado.</h6><br>
+      <img class="mr-5" src="qr.png" alt="" style="width: 20vw;">
+      <img class="ml-5" src="scann_qr.gif" alt="" style="width: 20vw;">
+    </div>
+    <div class="col mb-5">
+      <h4>Configura la App a tu estilo</h4>
+      <p>Cambia el nombre de usuario. <b>Se guardará automáticamente</b>.</p>
+      <p>Desliza la pantalla superior para configurar el color y ver los comandos de voz. <b>Debes reiniciar la app para
+          que los cambios se completen.</b></p>
+      <img class="ml-5" src="app_config.gif" alt="" style="width: 20vw;">
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+</body>
+
+</html>
